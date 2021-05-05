@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNavigationApp.Pages.AboutPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="About us"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="btnContact" Clicked="btnContact_Clicked"  Text="Contact me"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
