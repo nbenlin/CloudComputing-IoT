@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels ="clr-namespace:MVVMApplication.Mobile.ViewModels;assembly=MVVMApplication.Mobile"
+             x:Class="MVVMApplication.Mobile.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel></viewModels:MainPageViewModel>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Label Text="My Xamarin Application" HorizontalTextAlignment="Center">
+            <Label.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="android">30 0 0 0</On>
+                </OnPlatform>
+            </Label.Padding>
+        </Label>
+
+        <Label Text="Xamarin MVVM"
+               x:Name="welcomeLabel" 
+               Style="{StaticResource LightLabelStyle}"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               FontSize="{DynamicResource LabelFontSize}" />
+
+        <StackLayout Padding="30">
+            <Entry Placeholder="First name" Text="{Binding FirstName}" />
+            <Entry Placeholder="Last name" Text="{Binding LastName}" />
+            <Button Text="Save to database" Command="{Binding SaveDataCommand} "/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
